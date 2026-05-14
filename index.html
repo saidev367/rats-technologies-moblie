@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rats Technologies</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    /* HERO SECTION */
+    .hero{
+      width:100%;
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+      padding:60px 40px;
+    }
+
+    /* LEFT CONTENT */
+    .content{
+      flex:1;
+    }
+
+    .logo{
+      width:300px;
+      max-width:100%;
+      margin-bottom:20px;
+    }
+
+    .title{
+      font-size:48px;
+      color:#222;
+      line-height:1.2;
+      margin-bottom:20px;
+    }
+
+    .desc{
+      font-size:20px;
+      color:#555;
+      line-height:1.8;
+      margin-bottom:35px;
+      max-width:600px;
+    }
+
+    .team-btn{
+      padding:16px 40px;
+      border:none;
+      border-radius:12px;
+      background:linear-gradient(45deg,#2563eb,#9333ea);
+      color:white;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .team-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* RIGHT IMAGE */
+    .student-image{
+      flex:1;
+      text-align:center;
+    }
+
+    .student-image img{
+      width:100%;
+      max-width:500px;
+    }
+
+    /* MODAL */
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.6);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      padding:15px;
+      z-index:1000;
+    }
+
+    .modal-content{
+      width:100%;
+      max-width:1000px;
+      background:#fff;
+      border-radius:15px;
+      padding:25px;
+      position:relative;
+      max-height:90vh;
+      overflow-y:auto;
+      animation:popup 0.3s ease;
+    }
+
+    .modal-content::-webkit-scrollbar{
+      width:8px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb{
+      background:linear-gradient(#2563eb,#9333ea);
+      border-radius:10px;
+    }
+
+    @keyframes popup{
+      from{
+        transform:scale(0.8);
+        opacity:0;
+      }
+      to{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+    .close-btn{
+      position:absolute;
+      top:12px;
+      right:18px;
+      font-size:30px;
+      cursor:pointer;
+      color:#333;
+    }
+
+    .modal-title{
+      font-size:32px;
+      margin-bottom:25px;
+      color:#111;
+      text-align:center;
+    }
+
+    /* TEAM GRID */
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:#f8f8f8;
+      border-radius:15px;
+      padding:25px 15px;
+      text-align:center;
+      transition:0.3s;
+      border:1px solid #eee;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .card img{
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:15px;
+      border:4px solid white;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .card h3{
+      font-size:20px;
+      color:#111;
+      margin-bottom:8px;
+    }
+
+    .card p{
+      color:#2563eb;
+      font-size:15px;
+      font-weight:bold;
+    }
+
+    /* TABLET */
+    @media(max-width:900px){
+      .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding:40px 20px;
+      }
+
+      .title{
+        font-size:38px;
+      }
+
+      .desc{
+        font-size:18px;
+        margin:auto auto 30px;
+      }
+
+      .logo{
+        width:240px;
+      }
+
+      .student-image img{
+        max-width:380px;
+      }
+    }
+
+    /* MOBILE */
+    @media(max-width:600px){
+
+      body{
+        overflow-x:hidden;
+      }
+
+      .hero{
+        padding:30px 15px;
+        gap:20px;
+      }
+
+      .logo{
+        width:180px;
+        margin:auto auto 20px;
+      }
+
+      .title{
+        font-size:28px;
+        line-height:1.3;
+      }
+
+      .desc{
+        font-size:16px;
+        line-height:1.7;
+      }
+
+      .team-btn{
+        width:100%;
+        padding:14px;
+        font-size:16px;
+      }
+
+      .student-image img{
+        width:100%;
+        max-width:300px;
+      }
+
+      .modal-content{
+        padding:20px 15px;
+      }
+
+      .modal-title{
+        font-size:24px;
+      }
+
+      .team-grid{
+        grid-template-columns:1fr;
+      }
+
+      .card{
+        padding:20px 10px;
+      }
+
+      .card img{
+        width:90px;
+        height:90px;
+      }
+
+      .card h3{
+        font-size:18px;
+      }
+
+      .card p{
+        font-size:14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <!-- LEFT CONTENT -->
+    <div class="content">
+
+      <img src="rats logo.png" alt="Logo" class="logo">
+
+      <h1 class="title">
+        Departure for a New Beginning...
+      </h1>
+
+      <p class="desc">
+        Empowering the next generation of tech professionals
+        with industry-leading training, real-world projects,
+        and guaranteed placement assistance.
+      </p>
+
+      <button class="team-btn" id="openModal">
+        Our Team
+      </button>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="student-image">
+      <img src="279ab02a-1447-4e89-9260-458fd428a8fc-removebg-preview.png" alt="Student">
+    </div>
+
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal" id="teamModal">
+
+    <div class="modal-content">
+
+      <span class="close-btn" id="closeModal">&times;</span>
+
+      <h2 class="modal-title">Our Team</h2>
+
+      <div class="team-grid">
+
+        <div class="card">
+          <img src="dad.png">
+          <h3>Dr. S. Thangadurai</h3>
+          <p>Founder & CEO</p>
+        </div>
+
+        <div class="card">
+          <img src="mom.png">
+          <h3>Ms. Rajeswari R</h3>
+          <p>Chief Financial Officer</p>
+        </div>
+
+        <div class="card">
+          <img src="image.png">
+          <h3>Mr. Manojkumar J</h3>
+          <p>Chief Technical Officer</p>
+        </div>
+
+        <div class="card">
+          <img src="image 4.png">
+          <h3>Mr. Praveen Kumar N</h3>
+          <p>Trainer cum S/W Developer</p>
+        </div>
+
+        <div class="card">
+          <img src="image 5.png">
+          <h3>Mr. Swajan V</h3>
+          <p>Trainer cum S/W Developer</p>
+        </div>
+
+        <div class="card">
+          <img src="image2.png">
+          <h3>Mr. Vilas M</h3>
+          <p>Chief Marketing Officer</p>
+        </div>
+
+        <div class="card">
+          <img src="image3.png">
+          <h3>Mr. Darshan S</h3>
+          <p>Marketing Executive</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("openModal");
+    const closeBtn = document.getElementById("closeModal");
+    const modal = document.getElementById("teamModal");
+
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if(e.target === modal){
+        modal.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
+```
