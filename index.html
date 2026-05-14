@@ -12,181 +12,89 @@
       box-sizing:border-box;
       font-family:Arial, Helvetica, sans-serif;
     }
+/* MOBILE */
+@media(max-width:600px){
 
-    body{
-      background:#f5f5f5;
-      min-height:100vh;
-      overflow-x:hidden;
-    }
+  body{
+    overflow-x:hidden;
+  }
 
-    /* HERO SECTION */
-    .hero{
-      width:100%;
-      max-width:1200px;
-      margin:auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:40px;
-      padding:60px 40px;
-    }
+  .hero{
+    flex-direction:row; /* KEEP IMAGE SIDE */
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:20px 12px;
+  }
 
-    /* LEFT CONTENT */
-    .content{
-      flex:1;
-    }
+  .content{
+    flex:1;
+  }
 
-    .logo{
-      width:300px;
-      max-width:100%;
-      margin-bottom:20px;
-    }
+  .logo{
+    width:120px;
+    margin-bottom:10px;
+  }
 
-    .title{
-      font-size:48px;
-      color:#222;
-      line-height:1.2;
-      margin-bottom:20px;
-    }
+  .title{
+    font-size:18px;
+    line-height:1.3;
+    margin-bottom:10px;
+  }
 
-    .desc{
-      font-size:20px;
-      color:#555;
-      line-height:1.8;
-      margin-bottom:35px;
-      max-width:600px;
-    }
+  .desc{
+    font-size:12px;
+    line-height:1.5;
+    margin-bottom:15px;
+  }
 
-    .team-btn{
-      padding:16px 40px;
-      border:none;
-      border-radius:12px;
-      background:linear-gradient(45deg,#2563eb,#9333ea);
-      color:white;
-      font-size:18px;
-      font-weight:bold;
-      cursor:pointer;
-      transition:0.3s;
-    }
+  .team-btn{
+    width:auto;
+    padding:10px 18px;
+    font-size:12px;
+    border-radius:8px;
+  }
 
-    .team-btn:hover{
-      transform:translateY(-3px);
-      box-shadow:0 10px 20px rgba(0,0,0,0.2);
-    }
+  .student-image{
+    flex:1;
+    text-align:right;
+  }
 
-    /* RIGHT IMAGE */
-    .student-image{
-      flex:1;
-      text-align:center;
-    }
+  .student-image img{
+    width:180px;
+    max-width:100%;
+  }
 
-    .student-image img{
-      width:100%;
-      max-width:500px;
-    }
+  .modal-content{
+    padding:20px 15px;
+  }
 
-    /* MODAL */
-    .modal{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,0.6);
-      display:none;
-      justify-content:center;
-      align-items:center;
-      padding:15px;
-      z-index:1000;
-    }
+  .modal-title{
+    font-size:24px;
+  }
 
-    .modal-content{
-      width:100%;
-      max-width:1000px;
-      background:#fff;
-      border-radius:15px;
-      padding:25px;
-      position:relative;
-      max-height:90vh;
-      overflow-y:auto;
-      animation:popup 0.3s ease;
-    }
+  .team-grid{
+    grid-template-columns:1fr;
+  }
 
-    .modal-content::-webkit-scrollbar{
-      width:8px;
-    }
+  .card{
+    padding:20px 10px;
+  }
 
-    .modal-content::-webkit-scrollbar-thumb{
-      background:linear-gradient(#2563eb,#9333ea);
-      border-radius:10px;
-    }
+  .card img{
+    width:90px;
+    height:90px;
+  }
 
-    @keyframes popup{
-      from{
-        transform:scale(0.8);
-        opacity:0;
-      }
-      to{
-        transform:scale(1);
-        opacity:1;
-      }
-    }
+  .card h3{
+    font-size:18px;
+  }
 
-    .close-btn{
-      position:absolute;
-      top:12px;
-      right:18px;
-      font-size:30px;
-      cursor:pointer;
-      color:#333;
-    }
+  .card p{
+    font-size:14px;
+  }
+}
 
-    .modal-title{
-      font-size:32px;
-      margin-bottom:25px;
-      color:#111;
-      text-align:center;
-    }
-
-    /* TEAM GRID */
-    .team-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
-
-    .card{
-      background:#f8f8f8;
-      border-radius:15px;
-      padding:25px 15px;
-      text-align:center;
-      transition:0.3s;
-      border:1px solid #eee;
-    }
-
-    .card:hover{
-      transform:translateY(-5px);
-      box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    }
-
-    .card img{
-      width:100px;
-      height:100px;
-      border-radius:50%;
-      object-fit:cover;
-      margin-bottom:15px;
-      border:4px solid white;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .card h3{
-      font-size:20px;
-      color:#111;
-      margin-bottom:8px;
-    }
-
-    .card p{
-      color:#2563eb;
-      font-size:15px;
-      font-weight:bold;
-    }
 
     /* TABLET */
     @media(max-width:900px){
@@ -281,6 +189,97 @@
         font-size:14px;
       }
     }
+    /* MENU BUTTON */
+.menu-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  background:linear-gradient(45deg,#2563eb,#9333ea);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+  z-index:2000;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+  position:fixed;
+  top:90px;
+  right:20px;
+  background:white;
+  width:220px;
+  border-radius:15px;
+  padding:20px;
+  display:none;
+  flex-direction:column;
+  gap:15px;
+  z-index:2000;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.mobile-menu a{
+  text-decoration:none;
+  color:#222;
+  font-size:18px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.mobile-menu a:hover{
+  color:#2563eb;
+}/* MENU BUTTON */
+.menu-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  background:linear-gradient(45deg,#2563eb,#9333ea);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+  z-index:2000;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+  position:fixed;
+  top:90px;
+  right:20px;
+  background:white;
+  width:220px;
+  border-radius:15px;
+  padding:20px;
+  display:none;
+  flex-direction:column;
+  gap:15px;
+  z-index:2000;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.mobile-menu a{
+  text-decoration:none;
+  color:#222;
+  font-size:18px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.mobile-menu a:hover{
+  color:#2563eb;
+}
   </style>
 </head>
 
@@ -374,6 +373,18 @@
 
     </div>
   </div>
+  <!-- MOBILE MENU BUTTON -->
+<div class="menu-btn" id="menuBtn">
+  ☰
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Courses</a>
+  <a href="#">Contact</a>
+</div>
 
   <script>
     const openBtn = document.getElementById("openModal");
